@@ -1,6 +1,6 @@
 package com.alas.petclinic.model;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.time.LocalDate;
 
