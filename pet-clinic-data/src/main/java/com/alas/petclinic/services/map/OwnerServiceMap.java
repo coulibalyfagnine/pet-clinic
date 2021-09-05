@@ -3,9 +3,9 @@ package com.alas.petclinic.services.map;
 import java.util.Set;
 
 import com.alas.petclinic.model.Owner;
-import com.alas.petclinic.services.CrudService;
+import com.alas.petclinic.services.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll() {
@@ -41,6 +41,12 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	public Owner save(Owner object) {
 		// TODO Auto-generated method stub
 		return super.save(object.getId(), object);
+	}
+
+	@Override
+	public Owner findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
