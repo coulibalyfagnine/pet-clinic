@@ -17,11 +17,15 @@ public class Dataloader implements CommandLineRunner {
 	private final VetService vetService;
 	
 	
-	public Dataloader() {
+	
+	public Dataloader(OwnerService ownerService, VetService vetService) {
 		super();
-		this.ownerService = new OwnerServiceMap();
-		this.vetService = new VetServiceMap();
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
+
+
+	
 
 
 	@Override
