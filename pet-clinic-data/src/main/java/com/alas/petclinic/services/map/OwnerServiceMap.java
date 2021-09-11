@@ -20,9 +20,9 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	}
 
 	@Override
-	public Owner save(Long id, Owner object) {
+	public Owner save(Owner object){
 		// TODO Auto-generated method stub
-		return super.save(id, object);
+		return super.save(object);
 	}
 
 	@Override
@@ -35,12 +35,6 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
 		super.deleteById(id);
-	}
-
-	@Override
-	public Owner save(Owner object) {
-		// TODO Auto-generated method stub
-		return super.save(object.getId(), object);
 	}
 
 	@Override
