@@ -4,8 +4,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.alas.petclinic.model.Owner;
+import com.alas.petclinic.model.PetType;
 import com.alas.petclinic.model.Vet;
 import com.alas.petclinic.services.OwnerService;
+import com.alas.petclinic.services.PetTypeService;
 import com.alas.petclinic.services.VetService;
 
 
@@ -14,13 +16,15 @@ public class Dataloader implements CommandLineRunner {
 
 	private final OwnerService ownerService;
 	private final VetService vetService;
+	private final PetTypeService petTypeService;
 	
 	
 	
-	public Dataloader(OwnerService ownerService, VetService vetService) {
+	public Dataloader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
 		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
+		this.petTypeService = petTypeService;
 	}
 
 
@@ -35,7 +39,7 @@ public class Dataloader implements CommandLineRunner {
 		
 		Owner owner1 = new Owner();
 		Owner owner2 = new Owner();
-		Owner owner3 = null;
+		Owner owner3 = new Owner();
 		
 		owner1.setFirstName("Djiby");
 		owner1.setLastName("Couby");				
@@ -68,6 +72,17 @@ public class Dataloader implements CommandLineRunner {
 		vetService.save(vet3);
 		
 		vetService.findAll().forEach(e-> System.out.println(e.getFirstName()));
+		
+		System.out.println("**************** loading the PetType *******************");
+		PetType petType = new PetType();
+		PetType petType1 = new PetType();
+		petType.setName("Carnivore");
+		petType1.setName("Mammifere");
+		petTypeService.save(petType);
+		petTypeService.save(petType1);
+		petTypeService.findAll().forEach(e ->System.out.println(e.getId()));
+		
+		System.out.println("**************** End) loading the PetType *******************");
 		
 	}
 
