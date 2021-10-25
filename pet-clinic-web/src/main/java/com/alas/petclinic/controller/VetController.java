@@ -9,7 +9,7 @@ import com.alas.petclinic.services.VetService;
 @RequestMapping("vets")
 @Controller
 public class VetController {
-
+	
 	private final VetService vetService;
 	
 	public VetController(VetService vetService) {
